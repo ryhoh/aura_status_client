@@ -1,0 +1,10 @@
+[Unit]
+Description = AuraStatusClientDaemon
+
+[Service]
+ExecStart = /opt/aura_status_client.sh
+Restart = always
+Type=simple
+
+[Install]
+WantedBy = multi-user.target

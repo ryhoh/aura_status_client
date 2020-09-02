@@ -9,12 +9,11 @@ import sys
 def main_unit():
     while True:
         filepath = '/opt/aura_stat_dm.log'
-        log_file = open(filepath, 'a')
-        try:
+        with open(filepath, 'a') as log_file:
             log_file.write(time.ctime() + "\n")
-        finally:
-            log_file.close()
-            time.sleep(15 * 60)
+
+        
+        time.sleep(15 * 60)
 
 def daemonize():
     pid = os.fork()
