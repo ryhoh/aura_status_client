@@ -4,7 +4,16 @@ NAME='client_name'
 
 while true
 do
-   curl -X POST -d "name=$NAME" https://aurastatusboard.herokuapp.com/api/heartbeat
+    # if having GPGPUs by nvidia...
+    if type nvidia-smi >/dev/null 2>&1
+    then
+    smi=`nvidia-smi`
+    else
+    smi=''
+    fi
+    
+    # send
+    curl -X POST -d "name=$NAME&smi=$smi" https://aurastatusboard.herokuapp.com/api/heartbeat
     
     # Hour [0, 6]: take deep sleep until 6.
     hour=`date "+%H"`
