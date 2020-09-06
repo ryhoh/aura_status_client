@@ -5,7 +5,7 @@ NAME='client_name'
 while true
 do
    curl -X POST -d "name=$NAME" https://aurastatusboard.herokuapp.com/api/heartbeat
-   sleep 900
+    
     # Hour [0, 6]: take deep sleep until 6.
     hour=`date "+%H"`
     if [ $hour -lt 6 ]
