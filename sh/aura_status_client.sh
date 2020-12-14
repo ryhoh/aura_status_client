@@ -1,6 +1,7 @@
 #!/bin/bash
 
 NAME='client_name'
+PASSWORD='api_password_here'
 
 while true
 do
@@ -13,7 +14,7 @@ do
     fi
 
     # send
-    curl -X POST -d "name=$NAME&nvidia_smi=$smi" https://aurastatusboard.herokuapp.com/api/heartbeat
+    curl -X POST -d "name=$NAME&password=$PASSWORD&nvidia_smi=$smi" https://aurastatusboard.herokuapp.com/api/heartbeat
 
     # Hour [0, 6]: take deep sleep until 6.
     hour=`date "+%H"`
