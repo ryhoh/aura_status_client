@@ -6,8 +6,8 @@ extern "C" {
   #include "DotMatrixLED.h"
 }
 
-const String WIFI_SSID = "rt500m-10b976-1";
-const String WIFI_PASSWORD = "6a5febdabcb19";
+const String WIFI_SSID = "your_ssid";
+const String WIFI_PASSWORD = "your_password";
 
 const uint8_t LED = 13;
 
